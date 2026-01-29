@@ -34,5 +34,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
+            docker-compose down
             docker pull ${{ secrets.DOCKER_USERNAME }}/user-profiles-backend
             docker-compose up -d
